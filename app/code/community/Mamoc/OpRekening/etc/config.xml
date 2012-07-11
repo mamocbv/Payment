@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Mamoc_OpRekening>
+			<version>1.0.0</version>
+		</Mamoc_OpRekening>
+	</modules>
+
+	<global>
+
+		<blocks>
+			<oprekening>
+				<class>Mamoc_OpRekening_Block</class>
+			</oprekening>
+		</blocks>
+
+		<helpers>
+			<oprekening>
+				<class>Mamoc_OpRekening_Helper</class>
+			</oprekening>
+		</helpers>
+
+		<models>
+			<oprekening>
+				<class>Mamoc_OpRekening_Model</class>
+			</oprekening>
+		</models>
+
+	</global>
+	
+	<frontend>
+		<layout>
+			<updates>
+				<oprekening>
+					<file>mamoc/[modulecode].xml</file>
+				</oprekening>
+			</updates>
+		</layout>
+	</frontend>
+
+	<admin>
+		<translate>
+			<modules>
+				<oprekening>
+					<files>
+                        			<default>Mamoc_OpRekening.csv</default>
+                    			</files>
+				</oprekening>
+			</modules>
+		</translate>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<oprekening after="Mage_Adminhtml">Mamoc_OpRekening</oprekening>
+					</modules>
+	              		</args>
+         		</adminhtml>
+        	</routers>
+	</admin>
+
+</config>
