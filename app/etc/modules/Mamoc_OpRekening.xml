@@ -2,11 +2,8 @@
 <config>
     <modules>
         <Mamoc_OpRekening>
-		<active>true</active>
-		<codePool>community</codePool>
-		<depends>
-            		<Mamoc_Core />
-        	</depends>
-	</Mamoc_OpRekening> 
+			<active>true</active>
+			<codePool>community</codePool>
+		</Mamoc_OpRekening>
     </modules>
 </config>

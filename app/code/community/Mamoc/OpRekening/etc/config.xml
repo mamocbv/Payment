@@ -26,37 +26,30 @@
 			</oprekening>
 		</models>
 
-	</global>
-	
-	<frontend>
-		<layout>
-			<updates>
-				<oprekening>
-					<file>mamoc/[modulecode].xml</file>
-				</oprekening>
-			</updates>
-		</layout>
-	</frontend>
+		<events>
+			<sales_model_service_quote_submit_after>
+				<observers>
+					<oprekening_model_observer>
+						<type>singleton</type>
+						<class>Mamoc_OpRekening_Model_Observer</class>
+						<method>autoCreateInvoice</method>
+					</oprekening_model_observer>
+				</observers>
+			</sales_model_service_quote_submit_after>
+		</events>
 
-	<admin>
-		<translate>
-			<modules>
-				<oprekening>
-					<files>
-                        			<default>Mamoc_OpRekening.csv</default>
-                    			</files>
-				</oprekening>
-			</modules>
-		</translate>
-		<routers>
-			<adminhtml>
-				<args>
-					<modules>
-						<oprekening after="Mage_Adminhtml">Mamoc_OpRekening</oprekening>
-					</modules>
-	              		</args>
-         		</adminhtml>
-        	</routers>
-	</admin>
+	</global>
+
+    <default>
+        <payment>
+            <oprekening>
+                <active>0</active>
+                <model>oprekening/oprekening</model>
+                <order_status>processing</order_status>
+                <title>Op Rekening</title>
+                <allowspecific>0</allowspecific>
+            </oprekening>
+         </payment>
+    </default>
 
 </config>
