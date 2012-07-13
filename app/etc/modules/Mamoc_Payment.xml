@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Mamoc_OpRekening>
+        <Mamoc_Payment>
 			<active>true</active>
 			<codePool>community</codePool>
-		</Mamoc_OpRekening>
+		</Mamoc_Payment>
     </modules>
 </config>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Mamoc_Payment>
+			<version>1.0.0</version>
+		</Mamoc_Payment>
+	</modules>
+
+	<global>
+
+		<blocks>
+			<mmc_payment>
+				<class>Mamoc_Payment_Block</class>
+			</mmc_payment>
+		</blocks>
+
+		<helpers>
+			<mmc_payment>
+				<class>Mamoc_Payment_Helper</class>
+			</mmc_payment>
+		</helpers>
+
+		<models>
+			<mmc_payment>
+				<class>Mamoc_Payment_Model</class>
+			</mmc_payment>
+		</models>
+
+		<events>
+			<sales_model_service_quote_submit_after>
+				<observers>
+					<mmc_payment_model_observer>
+						<type>singleton</type>
+						<class>Mamoc_Payment_Model_Observer</class>
+						<method>autoCreateInvoice</method>
+					</mmc_payment_model_observer>
+				</observers>
+			</sales_model_service_quote_submit_after>
+		</events>
+
+	</global>
+
+    <default>
+        <payment>
+            <oprekening>
+                <active>0</active>
+                <model>mmc_payment/method_oprekening</model>
+                <order_status>processing</order_status>
+                <title>Op Rekening</title>
+                <allowspecific>0</allowspecific>
+            </oprekening>
+            <rembours>
+                <active>0</active>
+                <model>mmc_payment/method_rembours</model>
+                <order_status>processing</order_status>
+                <title>Rembours</title>
+                <allowspecific>0</allowspecific>
+            </rembours>
+         </payment>
+    </default>
+
+</config>
